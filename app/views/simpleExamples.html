@@ -1,0 +1,13 @@
+<h3>Expander</h3>
+<expander class='expander' expander-title="expanders[0].title">
+    Simple example of an expander
+</expander>
+
+<br/>
+<h3>Grouped Expanders</h3>
+<expander-group>
+	<expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
+    {{expander.text}}
+	</expander>
+</expander-group>
+
