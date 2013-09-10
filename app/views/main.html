@@ -1,0 +1,20 @@
+<page-title>Angular Directives Demo</page-title>
+
+<div>
+	<tabs style="margin-left: 5px">
+		<pane title="Simple Examples">
+			<ng-include src="'views/simpleExamples.html'"/>
+		</pane>
+		<pane title="Form Examples">
+			<form name="chForm" novalidate >
+				<p>Amount: <input name="checkAmount" smart-float ng-model="user.checkAmount"/>
+					<span ng-show="chForm.checkAmount.$error.float" class="ng-error-msg"> Not a valid float</span>
+				</p>
+				<p>Date:  <input datepicker ng-model="$parent.user.checkDate"/>
+				</p>
+			</form>
+		</pane>
+	</tabs>
+</div>
+
+
