@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angDemo', ['demo.directives'])
+angular.module('angDemo', ['ngRoute','demo.directives','ngAnimate'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

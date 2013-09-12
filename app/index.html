@@ -11,35 +11,55 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css"/>
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <style>
-          .expander {
-            /*border: 1px solid black;*/
-            width: 250px;
-          }
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <style type="text/css">
+      .expander {
+        /*border: 1px solid black;*/
+        width: 250px;
+      }
 
-          .expander > .title {
-            background-color: black;
-            color: white;
-            padding: .1em .3em;
-            cursor: pointer;
-          }
-          .expander > .body {
-            padding: .1em .3em;
-          }        
-          .ng-error-msg {
-            color: #FA787E;
-          }
-          input.ng-invalid.ng-dirty {
-              background-color: #FA787E;
-          }
+      .expander > .title {
+        background-color: black;
+        color: white;
+        padding: .1em .3em;
+        cursor: pointer;
+      }
 
-        </style>
+      .expander > .body {
+        padding: .1em .3em;
+      }        
+      .ng-error-msg {
+        color: #FA787E;
+      }
+      input.ng-invalid.ng-dirty {
+          background-color: #FA787E;
+      }
+
+      .repeat-item.ng-enter,
+      .repeat-item.ng-leave {
+        -webkit-transition:0.5s linear all;
+        -moz-transition:0.5s linear all;
+        -o-transition:0.5s linear all;
+        transition:0.5s linear all;
+      }
+
+      .repeat-item.ng-enter,
+      .repeat-item.ng-leave.ng-leave-active {
+        opacity:0;
+      }
+
+      .repeat-item.ng-leave,
+      .repeat-item.ng-enter.ng-enter-active {
+        opacity:1;
+      }
+    </style>
+     
         <!-- endbuild -->
-</head>
+  </head>
   <body ng-app="angDemo">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -65,6 +85,8 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
