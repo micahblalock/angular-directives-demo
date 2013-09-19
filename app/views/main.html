@@ -8,7 +8,7 @@
 		<pane title="Form Examples">
 			<form name="chForm" novalidate >
 				<p>Amount: <input name="checkAmount" smart-float ng-model="user.checkAmount"/>
-					<span ng-show="chForm.checkAmount.$error.float" class="ng-error-msg"> Not a valid float</span>
+					<span ng-show="chForm.checkAmount.$error.float" class="ng-error-msg"> {{custom.floatmsg}}</span>
 				</p>
 				<p>Date:  <input datepicker ng-model="$parent.user.checkDate"/>
 				</p>
@@ -29,6 +29,34 @@
 				    	</ul>
 				    </form>
 				</div>
+			</div>
+		</pane>
+		<pane title="wizard">
+			<div class="container registration-era" ng-controller="RegistrationCtrl">
+
+				<header id="appHeader" class="app-header">
+			    	<h1>ERA Enrollment</h1>
+			  	</header>
+
+			  	<div id="appBody" ng-include="pageWiz.currentStep.templateUrl" class="app-body registration-era">
+			    
+			  	</div>
+
+				<footer id="appFooter" class="app-footer">
+				    <div class="form-actions clearfix">
+				      	<div class="row-fluid">
+				        	<div class="span4">
+				          		<button ng-click="pageWiz.getPreviousPage()" ng-disabled="!pageWiz.hasPreviousPage()">Back</button>
+				        	</div>
+				        	<div class="span4">
+				          		<a href="#" data-action="cancel" class="btn btn-block btn-large hidden">Cancel</a>
+				        	</div>
+				        	<div class="span4">
+				          		<button ng-click="pageWiz.getNextPage()" ng-disabled="!pageWiz.hasNextPage()">Next</a>
+				        	</div>
+					    </div>
+				    </div>
+				</footer>
 			</div>
 		</pane>
 	</tabs>
