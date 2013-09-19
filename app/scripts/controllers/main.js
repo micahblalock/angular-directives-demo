@@ -17,6 +17,7 @@ angular.module('angDemo')
 
   })
   .controller('RegistrationCtrl', function($scope, Ticket, PageWizard) {
+      $scope.ticketTypes = [{name: 'Claim', value: 'A'}, {name: 'ERA', value: 'B'}];
       $scope.ticket = Ticket.get();
       $scope.pageWiz = PageWizard.get();
       var pages = [{templateUrl: 'views/p1.html'}, 

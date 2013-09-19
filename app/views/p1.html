@@ -1,10 +1,8 @@
 <h1>Page 1</h1>
 
 <div>
-	Payer Type:
-	<select ng-model="ticket.type" required>
+	Ticket Type:
+	<select ng-model="ticket.type" required ng-options="ttype.value as ttype.name for ttype in ticketTypes">
 		<option></option>
-		<option>A</option>
-		<option>B</option>
 	</select>
 </div>

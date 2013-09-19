@@ -2,3 +2,109 @@
 
 <div> You selected ticket type: {{ticket.type}}</div>
 
+<div class="row">
+	<div class="span6">
+            <div class="control-group">
+              <label class="control-label">Subject:</label>
+              <div class="controls">
+                <input  type="text" ng-model="ticket.subject" required id="id2e" maxlength="255">
+              </div>
+            </div>
+
+			<div class="control-group">
+              <label class="control-label">Availity Batch ID:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.batchID" id="id2f" maxlength="20">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Patient Name:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.patientName" id="id30" maxlength="64">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Submission Format:</label>
+              <div class="controls">
+                <select ng-model="ticket.submissionFormat">
+	                <option value="">Select One</option>
+	                <option value="0">EDI 4010</option>
+	                <option value="1">EDI 5010</option>
+	            </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Details:</label>
+              <div class="controls">
+                <select ng-model="ticket.details" id="id31" >
+				<option value="">Select One</option>
+				<option value="0">Batch Reject</option>
+				<option value="1">Claim Reject</option>
+				<option value="2">Missing Response</option>
+				<option value="3">File Restore</option>
+				</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">My Tracking Number:(Optional)</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.customerReferenceNumber" id="id33" maxlength="32">
+              </div>
+            </div>
+            
+            
+	</div>
+	
+	
+	<div class="span6">
+			<div class="control-group">
+              <label class="control-label" for="inputEmail">Provider's Tax ID:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.taxID"  id="id34" maxlength="9">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Provider's NPI:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.npiID" id="id35" maxlength="10">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Payer Name / ID:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.ediPayerName" id="id36" maxlength="64">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Payer Type:</label>
+              <div class="controls">
+                <select ng-model="ticket.payerType" id="id37" >
+				<option value="">Select One</option>
+				<option value="0">Commercial Payer</option>
+				<option value="1">Government Payer</option>
+				</select>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Provider's Name:</label>
+              <div class="controls">
+                <select ng-model="ticket.providerName" id="id3a"> 
+<option value="">Select One</option>
+<option value="0">Not listed</option>
+</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="inputEmail">Provider's Customer ID:</label>
+              <div class="controls">
+                <input type="text" ng-model="ticket.providerCustomerID" value="NA" >
+              </div>
+            </div>
+	</div><!-- End Span 6 -->
+	
+</div><!-- End Row -->
+
+</div>
+
+
