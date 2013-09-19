@@ -27,24 +27,75 @@ angular.module('angDemo', ['ngRoute','demo.directives','ngAnimate'])
       save: saveUser
     }
   })
-  .factory('Payer', function() {
-    var payer = {};
-    payer.companyName = '';
-    payer.phoneNumber = '';
-    payer.email = '';
-    payer.npiNumber = '';
-    payer.taxId = '';
-    var getpayer = function() {
-      return payer;
+  .factory('Ticket', function() {
+    var ticket = {};
+    ticket.companyName = '';
+    ticket.phoneNumber = '';
+    ticket.email = '';
+    ticket.npiNumber = '';
+    ticket.taxId = '';
+    var getticket = function() {
+      return ticket;
     }
-    var updatePayer = function(_payer) {
-      console.log('payer: ' + _payer);
-      payer = _payer
+    var updateTicket = function(_ticket) {
+      console.log('ticket: ' + _ticket);
+      ticket = _ticket
     }
     return {
-      get: getpayer,
-      save: updatePayer
+      get: getticket,
+      save: updateTicket
     };
+  })
+  .factory('PageWizard', function(){
+      var pageWiz = {};
+      var pageIndex = 0;
+      var pages = [];
+      pageWiz.currentStep = "";
+
+      var setNextPage = function() {
+        var nextPage = pages[pageIndex];
+        if(nextPage.selectGroup) {
+          for(var grpIndex in nextPage.selectGroup){
+            var page = nextPage.selectGroup[grpIndex];
+            var expression = page.routeWhen;
+            // console.log(eval(expression));
+            if(expression) {
+              pageWiz.currentStep = page;
+              break;
+            }
+          }
+        } else {
+          pageWiz.currentStep = nextPage;
+        }        
+      }
+      pageWiz.getNextPage = function(){
+        pageIndex++;
+        setNextPage();
+      }
+      pageWiz.getPreviousPage = function(){
+        pageIndex--;
+        setNextPage();
+      }
+      pageWiz.hasNextPage = function() {
+        var hasNext = pageIndex < pages.length - 1;
+        return hasNext;
+      }
+      pageWiz.hasPreviousPage = function() {
+        var hasPrev = pageIndex > 0;
+        return hasPrev;
+      }
+
+      pageWiz.addPages = function(pagesArray){
+        pages = pagesArray;
+        pageWiz.currentStep = pages[pageIndex];
+
+      }
+      var getWiz = function(){
+        return pageWiz;
+      }
+      return {
+        get: getWiz
+      }
   });
 
 
