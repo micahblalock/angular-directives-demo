@@ -52,7 +52,7 @@
 				          		<a href="#" data-action="cancel" class="btn btn-block btn-large hidden">Cancel</a>
 				        	</div>
 				        	<div class="span4">
-				          		<button ng-click="pageWiz.getNextPage()" ng-disabled="!pageWiz.hasNextPage()">Next</a>
+				          		<button ng-click="pageWiz.getNextPage()" ng-disabled="!pageWiz.hasNextPage() || !payerForm.$valid">Next</a>
 				        	</div>
 					    </div>
 				    </div>
