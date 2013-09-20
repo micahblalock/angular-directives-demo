@@ -73,7 +73,7 @@ angular.module('demo.directives',[])
 			}
 		}
 	})
-	.directive('datepicker', function() {
+	.directive('mydatepicker', function() {
 	    return {
     		restrict: 'A',
 			require: '?ngModel',

@@ -9,13 +9,13 @@
 		            <div class="control-group">
 		              <label class="control-label">Subject:</label>
 		              <div class="controls">
-		                <input  type="text" ng-model="ticket.subject" required id="id2e" maxlength="255">
+		                <input  type="text" ng-model="ticket.subject" required maxlength="255">
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Details:</label>
 		              <div class="controls">
-		                <select ng-model="ticket.details" id="id31" required>
+		                <select ng-model="ticket.details" required>
 						<option value="">Select One</option>
 						<option value="0">Enrollment</option>
 						<option value="1">Missing ERA</option>
@@ -36,20 +36,21 @@
 		            <div class="control-group">
 		              <label class="control-label">Check Number</label>
 		              <div class="controls">
-		                <input type="number" ng-model="ticket.checkNumber" id="id33" ng-maxlength="30">
+		                <input type="number" ng-pattern="/^\-?\d+((\.|\,)\d+)?$/" ng-model="ticket.checkAmount" ng-maxlength="30"><br/>
+		                 currency identifier (USD$): {{ticket.checkAmount | currency:"USD$"}}
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Check Date</label>
 		              <div class="controls">
-		                <input datepicker  ng-model="ticket.checkDate" id="id33" ng-required="ticket.checkNumber !== ''" />
+		                <input mydatepicker ng-model="ticket.checkDate" ng-required="ticket.checkNumber !== ''" />
 		              </div>
 		            </div>
 
 		            <div class="control-group">
 		              <label class="control-label" >My Tracking Number:(Optional)</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.customerReferenceNumber" id="id33" ng-maxlength="32">
+		                <input type="text" ng-model="ticket.customerReferenceNumber" ng-maxlength="32">
 		              </div>
 		            </div>
 		            
@@ -60,25 +61,25 @@
 					<div class="control-group">
 		              <label class="control-label">Provider's Tax ID:</label>
 		              <div class="controls">
-		                <input type="number" ng-model="ticket.taxID"  id="id34" maxlength="9" required ng-maxlength='9' ng-minlength='9'>
+		                <input type="number" ng-model="ticket.taxID"  maxlength="9" required ng-maxlength='9' ng-minlength='9'>
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Provider's NPI:</label>
 		              <div class="controls">
-		                <input type="number" ng-model="ticket.npiID" id="id35" required ng-maxlength='9' ng-minlength='9'>
+		                <input type="number" ng-model="ticket.npiID" required ng-maxlength='9' ng-minlength='9'>
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Payer Name / ID:</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.ediPayerName" id="id36" ng-maxlength="64" required>
+		                <input type="text" ng-model="ticket.ediPayerName" ng-maxlength="64" required>
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Payer Type:</label>
 		              <div class="controls">
-		                <select ng-model="ticket.payerType" id="id37" required>
+		                <select ng-model="ticket.payerType" required>
 						<option value="">Select One</option>
 						<option value="0">Commercial Payer</option>
 						<option value="1">Government Payer</option>

@@ -10,17 +10,17 @@
 				<p>Amount: <input name="checkAmount" smart-float ng-model="user.checkAmount"/>
 					<span ng-show="chForm.checkAmount.$error.float" class="ng-error-msg"> {{custom.floatmsg}}</span>
 				</p>
-				<p>Date:  <input datepicker ng-model="$parent.user.checkDate"/>
+				<p>Date:  <input mydatepicker ng-model="$parent.user.checkDate"/>
 				</p>
-			  	<p>First name: <input name='firstName' ng-model='user.first' required></p>
-		  <p>Last name: <input ng-model='user.last' required></p>
+			  	<p>First name: <input type="text" name='firstName' ng-model='user.first' required></p>
+		  <p>Last name: <input type="text" ng-model='user.last' required></p>
 		  <p>Email: <input type='email' ng-model='user.email' required></p>
 		  <p>Age: <input type='number'
 		                   ng-model='user.age'
 		                   ng-maxlength='3'
 		                   ng-min='1' ng-max='100'></p>
 		  <p><button ng-click='addUser()'
-		               ng-disabled='!addUserForm.$valid'>Submit</button></p>
+		               ng-disabled='!chForm.$valid'>Submit</button></p>
 
 			</form>
 		</pane>
@@ -59,10 +59,7 @@
 					          		<button ng-click="pageWiz.getPreviousPage()" ng-disabled="!pageWiz.hasPreviousPage()">Back</button>
 					        	</div>
 					        	<div class="span4">
-					          		<a href="#" data-action="cancel" class="btn btn-block btn-large hidden">Cancel</a>
-					        	</div>
-					        	<div class="span4">
-					          		<button ng-click="pageWiz.getNextPage()" ng-disabled="!(payerForm.$valid && pageWiz.hasNextPage())">Next</a>
+					          		<button class="pull-right" ng-click="pageWiz.getNextPage()" ng-disabled="!(payerForm.$valid && pageWiz.hasNextPage())">Next</a>
 					        	</div>
 						    </div>
 					    </div>
