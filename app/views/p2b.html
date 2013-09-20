@@ -34,16 +34,16 @@
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label">Check Number</label>
+		              <label class="control-label">Check Amount</label>
 		              <div class="controls">
 		                <input type="number" ng-pattern="/^\-?\d+((\.|\,)\d+)?$/" ng-model="ticket.checkAmount" ng-maxlength="30"><br/>
-		                 currency identifier (USD$): {{ticket.checkAmount | currency:"USD$"}}
+		                 currency identifier (USD$): {{ticket.checkAmount | currency:"$"}}
 		              </div>
 		            </div>
 		            <div class="control-group">
 		              <label class="control-label">Check Date</label>
 		              <div class="controls">
-		                <input mydatepicker ng-model="ticket.checkDate" ng-required="ticket.checkNumber !== ''" />
+		                <input mydatepicker ng-model="$parent.ticket.checkDate" ng-required="ticket.checkNumber !== ''" />
 		              </div>
 		            </div>
 

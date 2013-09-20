@@ -13,15 +13,14 @@
 				<p>Date:  <input mydatepicker ng-model="$parent.user.checkDate"/>
 				</p>
 			  	<p>First name: <input type="text" name='firstName' ng-model='user.first' required></p>
-		  <p>Last name: <input type="text" ng-model='user.last' required></p>
-		  <p>Email: <input type='email' ng-model='user.email' required></p>
-		  <p>Age: <input type='number'
+			  	<p>Last name: <input type="text" ng-model='user.last' required></p>
+		  		<p>Email: <input type='email' ng-model='user.email' required></p>
+		  		<p>Age: <input type='number'
 		                   ng-model='user.age'
 		                   ng-maxlength='3'
 		                   ng-min='1' ng-max='100'></p>
-		  <p><button ng-click='addUser()'
+		  		<p><button ng-click='addUser()'
 		               ng-disabled='!chForm.$valid'>Submit</button></p>
-
 			</form>
 		</pane>
 		<pane title="Animations">
@@ -58,7 +57,7 @@
 					        	<div class="span4">
 					          		<button ng-click="pageWiz.getPreviousPage()" ng-disabled="!pageWiz.hasPreviousPage()">Back</button>
 					        	</div>
-					        	<div class="span4">
+					        	<div class="span6">
 					          		<button class="pull-right" ng-click="pageWiz.getNextPage()" ng-disabled="!(payerForm.$valid && pageWiz.hasNextPage())">Next</a>
 					        	</div>
 						    </div>
