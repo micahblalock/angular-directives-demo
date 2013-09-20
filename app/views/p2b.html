@@ -9,13 +9,13 @@
 		            <div class="control-group">
 		              <label class="control-label">Subject:</label>
 		              <div class="controls">
-		                <input  type="text" ng-model="ticket.subject" ng-required id="id2e" maxlength="255">
+		                <input  type="text" ng-model="ticket.subject" required id="id2e" maxlength="255">
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Details:</label>
+		              <label class="control-label">Details:</label>
 		              <div class="controls">
-		                <select ng-model="ticket.details" id="id31" >
+		                <select ng-model="ticket.details" id="id31" required>
 						<option value="">Select One</option>
 						<option value="0">Enrollment</option>
 						<option value="1">Missing ERA</option>
@@ -24,9 +24,9 @@
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Submission Format:</label>
+		              <label class="control-label">Submission Format:</label>
 		              <div class="controls">
-		                <select ng-model="ticket.submissionFormat">
+		                <select ng-model="ticket.submissionFormat" required>
 			                <option value="">Select One</option>
 			                <option value="0">EDI 4010</option>
 			                <option value="1">EDI 5010</option>
@@ -34,22 +34,22 @@
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Check Number</label>
+		              <label class="control-label">Check Number</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.checkNumber" id="id33" maxlength="30">
+		                <input type="number" ng-model="ticket.checkNumber" id="id33" ng-maxlength="30">
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Check Date</label>
+		              <label class="control-label">Check Date</label>
 		              <div class="controls">
-		                <input datepicker-popup="MM/dd/yyyy" open="opened" ng-model="ticket.checkDate" id="id33" ng-required="ticket.ticketType == 1" />
+		                <input datepicker  ng-model="ticket.checkDate" id="id33" ng-required="ticket.checkNumber !== ''" />
 		              </div>
 		            </div>
 
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">My Tracking Number:(Optional)</label>
+		              <label class="control-label" >My Tracking Number:(Optional)</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.customerReferenceNumber" id="id33" maxlength="32">
+		                <input type="text" ng-model="ticket.customerReferenceNumber" id="id33" ng-maxlength="32">
 		              </div>
 		            </div>
 		            
@@ -58,27 +58,27 @@
 			
 			<div class="span6">
 					<div class="control-group">
-		              <label class="control-label" for="inputEmail">Provider's Tax ID:</label>
+		              <label class="control-label">Provider's Tax ID:</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.taxID"  id="id34" maxlength="9">
+		                <input type="number" ng-model="ticket.taxID"  id="id34" maxlength="9" required ng-maxlength='9' ng-minlength='9'>
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Provider's NPI:</label>
+		              <label class="control-label">Provider's NPI:</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.npiID" id="id35" maxlength="10">
+		                <input type="number" ng-model="ticket.npiID" id="id35" required ng-maxlength='9' ng-minlength='9'>
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Payer Name / ID:</label>
+		              <label class="control-label">Payer Name / ID:</label>
 		              <div class="controls">
-		                <input type="text" ng-model="ticket.ediPayerName" id="id36" maxlength="64">
+		                <input type="text" ng-model="ticket.ediPayerName" id="id36" ng-maxlength="64" required>
 		              </div>
 		            </div>
 		            <div class="control-group">
-		              <label class="control-label" for="inputEmail">Payer Type:</label>
+		              <label class="control-label">Payer Type:</label>
 		              <div class="controls">
-		                <select ng-model="ticket.payerType" id="id37" >
+		                <select ng-model="ticket.payerType" id="id37" required>
 						<option value="">Select One</option>
 						<option value="0">Commercial Payer</option>
 						<option value="1">Government Payer</option>

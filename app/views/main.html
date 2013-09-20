@@ -12,6 +12,16 @@
 				</p>
 				<p>Date:  <input datepicker ng-model="$parent.user.checkDate"/>
 				</p>
+			  	<p>First name: <input name='firstName' ng-model='user.first' required></p>
+		  <p>Last name: <input ng-model='user.last' required></p>
+		  <p>Email: <input type='email' ng-model='user.email' required></p>
+		  <p>Age: <input type='number'
+		                   ng-model='user.age'
+		                   ng-maxlength='3'
+		                   ng-min='1' ng-max='100'></p>
+		  <p><button ng-click='addUser()'
+		               ng-disabled='!addUserForm.$valid'>Submit</button></p>
+
 			</form>
 		</pane>
 		<pane title="Animations">
