@@ -16,10 +16,11 @@ angular.module('angDemo')
   		$scope.user = User.get();
 
   })
-  .controller('RegistrationCtrl', function($scope, Ticket, PageWizard) {
+  .controller('RegistrationCtrl', function($scope, Ticket, PageWizard, $http) {
       $scope.ticketTypes = [{name: 'Claim', value: 'A'}, {name: 'ERA', value: 'B'}];
       $scope.ticket = Ticket.get();
       $scope.pageWiz = PageWizard.get();
+
       var pages = [{templateUrl: 'views/p1.html'}, 
                 {selectGroup: [ {templateUrl: 'views/p2.html',
                                  routeWhen: function(){$scope.ticket.type==="A";}},
@@ -28,4 +29,15 @@ angular.module('angDemo')
                 }, 
                 {templateUrl: 'views/p3.html'}];
       $scope.pageWiz.addPages(pages);
-  })
+
+
+
+      $scope.$watch('pageWiz.currentStep', function(params) {
+        if(! $scope.providers && $scope.ticket.type==='A'){
+          $http.get("providers.json").success(function(data){
+              $scope.providers = data;
+          });
+        }
+      }, true);
+   
+  });

@@ -89,10 +89,10 @@
             <div class="control-group">
               <label class="control-label" for="inputEmail">Provider's Name:</label>
               <div class="controls">
-                <select ng-model="ticket.providerName" id="id3a"> 
-<option value="">Select One</option>
-<option value="0">Not listed</option>
-</select>
+                <select ng-model="ticket.providerName" id="id3a" ng-options="provider.customerid as provider.name for provider in providers"> 
+					<option value="">Select One</option>
+					<option value="0" ng-hide="$scope.providers.length > 0">Not listed</option>
+				</select>
               </div>
             </div>
             <div class="control-group">

@@ -29,11 +29,6 @@ angular.module('angDemo', ['ngRoute','demo.directives','ngAnimate'])
   })
   .factory('Ticket', function() {
     var ticket = {};
-    ticket.companyName = '';
-    ticket.phoneNumber = '';
-    ticket.email = '';
-    ticket.npiNumber = '';
-    ticket.taxId = '';
     var getticket = function() {
       return ticket;
     }
