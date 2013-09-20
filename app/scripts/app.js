@@ -53,8 +53,8 @@ angular.module('angDemo', ['ngRoute','demo.directives','ngAnimate'])
           for(var grpIndex in nextPage.selectGroup){
             var page = nextPage.selectGroup[grpIndex];
             var expression = page.routeWhen;
-            // console.log(eval(expression));
-            if(expression) {
+            // console.log('Expression = ' + expression()));
+            if(expression()) {
               pageWiz.currentStep = page;
               break;
             }

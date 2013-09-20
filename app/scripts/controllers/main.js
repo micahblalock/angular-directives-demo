@@ -23,9 +23,9 @@ angular.module('angDemo')
 
       var pages = [{templateUrl: 'views/p1.html'}, 
                 {selectGroup: [ {templateUrl: 'views/p2.html',
-                                 routeWhen: function(){$scope.ticket.type==="A";}},
+                                 routeWhen: function(){return $scope.ticket.type==="A";}},
                                 {templateUrl: 'views/p2b.html',
-                                 routeWhen: function(){$scope.ticket.type==="B";}} ] 
+                                 routeWhen: function(){return $scope.ticket.type==="B";}} ] 
                 }, 
                 {templateUrl: 'views/p3.html'}];
       $scope.pageWiz.addPages(pages);
